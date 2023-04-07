@@ -2,7 +2,7 @@ version: "3.9"
 services:
   batch-db:
     image: mysql:latest
-    container_name: batch-app
+    container_name: batch-db
     environment:
       MYSQL_ROOT_PASSWORD: batch
       MYSQL_DATABASE: batch
