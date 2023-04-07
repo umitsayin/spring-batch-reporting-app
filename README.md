@@ -18,6 +18,7 @@ An online shopping website wants to automate reporting on Excel tables for daily
 
 ## How do you run it?
 
-Step 1: mvn install <br />
-Step 2: Go to the docker directory and run the code: docker-compose up -d <br />
-Step 3: Go back to the main directory and run this command: docker exec -i batch-db mysql -u root -pbatch batch < ./batch-starter.sql
+
+Step 1: Go to the docker directory and run the code: docker-compose up -d <br />
+Step 2: Go back to the main directory and run this command: docker exec -i batch-db mysql -u root -pbatch batch < ./batch-starter.sql <br />
+Step 3: Run application
