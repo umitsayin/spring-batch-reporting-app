@@ -1,0 +1,27 @@
+version: "3.9"
+services:
+  batch-db:
+    image: mysql:latest
+    container_name: batch-app
+    environment:
+      MYSQL_ROOT_PASSWORD: batch
+      MYSQL_DATABASE: batch
+    ports:
+      - "3306:3306"
+    networks:
+      - batch-network
+  batch-app:
+    container_name: batch-app
+    restart: always
+    build: ../
+    ports:
+      - 8080:8080
+    networks:
+      - batch-network
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/batch
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: batch
+networks:
+  batch-network:
+    driver: bridge
