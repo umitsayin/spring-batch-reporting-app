@@ -19,7 +19,7 @@ public class SpringBatchApplication {
         SpringApplication.run(SpringBatchApplication.class, args);
     }
 
-    @Scheduled(cron = "0 0 0 * * *", initialDelay = 60000)
+    @Scheduled(fixedRate = 300000, initialDelay = 60000)
     public void myTask() {
         jobService.runBatchJob();
     }
